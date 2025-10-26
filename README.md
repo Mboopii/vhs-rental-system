@@ -7,11 +7,17 @@ Ove upute koriste `docker-compose.yml` za izgradnju i pokretanje oba dijela apli
 - Provjerite da su Docker i Docker Compose instalirani i pokrenuti.
 - Poželjno imati Docker Desktop.
 - Pozicionirajte se u korijenski direktorij cijelog projekta (folder koji sadrži `docker-compose.yml`, `backend` i `frontend`).
-- Izgradite image i pokrenite kontejnere pomoću naredbe: docker-compose up --build -d
+- Izgradite image i pokrenite kontejnere pomoću naredbe:
+  ```bash
+  docker-compose up --build -d
+  ```
 - Pristup aplikaciji:
   - Backend servis će biti dostupan na http://localhost:8080.
-  - Frontend će biti dostupna na http://localhost:5173.
-- Za zaustavljanje i uklanjanje kontejnera pokrenutih s Docker Compose, iz istog direktorija izvršite: docker-compose down
+  - Frontend aplikacija će biti dostupna na http://localhost:5173.
+- Za zaustavljanje i uklanjanje kontejnera pokrenutih s Docker Compose, iz istog direktorija izvršite:
+  ```bash
+  docker-compose down
+  ```
 
 ## Alternativno pokretanje projekta (backend i baza podataka)
 
@@ -21,7 +27,10 @@ Upute za pokretanje backend servisa i H2 in-memory baze podataka.
 2.  Koristio sam:
     - Java Development Kit (JDK) verzije 21.
     - Maven verzije 3.9.11
-3.  Pozicionirajte se u korijenski direktorij projekta (gdje se nalazi `pom.xml`) i pokrenite aplikaciju koristeći Maven. Ova naredba će kompajlirati projekt, pokrenuti Spring Boot aplikaciju i inicijalizirati H2 in-memory bazu podataka: mvnw spring-boot:run
+3.  Pozicionirajte se u korijenski direktorij projekta (gdje se nalazi `pom.xml`) i pokrenite aplikaciju koristeći Maven. Ova naredba će kompajlirati projekt, pokrenuti Spring Boot aplikaciju i inicijalizirati H2 in-memory bazu podataka:
+    ```bash
+    mvnw spring-boot:run
+    ```
 4.  Backend aplikacije će biti dostupan na adresi http://localhost:8080.
 5.  Prilikom prvog pokretanja, Hibernate će automatski kreirati shemu baze podataka. Nakon toga, `data.sql` skripta će se izvršiti i popuniti bazu s testnim podacima.
 
@@ -30,8 +39,14 @@ Upute za pokretanje backend servisa i H2 in-memory baze podataka.
 Za pokretanje frontenda potrebno je koristiti Vite razvojni poslužitelj.
 
 1.  Pozicionirajte se u direktorij `frontend`-a.
-2.  Instalirajte ovisnost pomoću naredbe: npm install
-3.  Pokrenite frontend pomoću naredbe: npm run dev
+2.  Instalirajte ovisnost pomoću naredbe:
+    ```bash
+    npm install
+    ```
+3.  Pokrenite frontend pomoću naredbe:
+    ```bash
+    npm run dev
+    ```
 4.  Korisničko sučelje će biti dostupno putem web preglednika na adresi http://localhost:5173.
 
 Konfiguracija CORS-a je postavljena u `WebConfig.java` kako bi omogućila komunikaciju između frontenda (localhost:5173) i backenda (localhost:8080).
@@ -66,7 +81,10 @@ Uvezite priloženu datoteku `vhs-collection.json` u Postman. Ova kolekcija sadr�
 Projekt uključuje set unit testova (za servisni sloj koristeći Mockito) i integration testova (koristeći Spring Boot testni kontekst). Za pokretanje svih testova:
 
 1.  Pozicionirajte se u korijenski direktorij `backend` dijela projekta.
-2.  Izvršite sljedeću Maven naredbu: mvnw test
+2.  Izvršite sljedeću Maven naredbu:
+    ```bash
+    mvnw test
+    ```
 3.  Maven će kompajlirati kod, izvršiti sve testove pronađene u `src/test/java` direktoriju i prikazati izvještaj o uspješnosti testova.
 
 ## Napomene o frontendu
