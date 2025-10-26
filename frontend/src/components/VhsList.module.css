@@ -1,0 +1,139 @@
+@reference "../index.css";
+
+.loadingText,
+.errorText {
+  @apply text-center py-4;
+}
+.loadingText {
+  @apply text-gray-500 italic;
+}
+.errorText {
+  @apply text-red-600 font-medium;
+}
+
+.title {
+  @apply text-2xl font-semibold text-gray-800 mb-5;
+}
+
+.emptyListText {
+  @apply text-gray-500 italic text-center py-4;
+}
+
+.filterContainer {
+  @apply flex justify-between items-center mb-5 flex-wrap gap-4;
+}
+
+.controlsContainer {
+  @apply flex items-center space-x-3 relative;
+}
+
+.filterLabel {
+  @apply text-sm font-medium text-gray-700 mr-2;
+}
+
+.genreSelect {
+  @apply p-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm cursor-pointer;
+}
+
+.yearButton {
+  @apply inline-flex justify-between items-center w-28 px-3 py-1 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer;
+}
+
+.yearButtonArrow {
+  @apply -mr-1 ml-2 h-5 w-5 text-gray-400;
+}
+
+.clearYearButton {
+  @apply ml-1 px-1 py-0.5 text-xs text-red-500 hover:text-red-700 focus:outline-none cursor-pointer;
+}
+
+.yearPicker {
+  @apply absolute top-full right-0 mt-2 w-64 rounded-md shadow-lg bg-white ring-1 ring-black/5 z-20 p-4;
+}
+
+.decadeNav {
+  @apply flex justify-between items-center mb-3;
+}
+
+.decadeButton {
+  @apply text-indigo-600 hover:text-indigo-800 text-lg font-bold p-1 leading-none cursor-pointer;
+}
+
+.decadeLabel {
+  @apply font-semibold text-sm;
+}
+
+.yearGrid {
+  @apply grid grid-cols-4 gap-2;
+}
+
+.yearGridButton {
+  @apply py-1 rounded text-center text-sm font-medium transition duration-150 ease-in-out cursor-pointer;
+}
+.yearGridButtonDefault {
+  @apply text-gray-700 hover:bg-indigo-100 hover:text-indigo-700;
+}
+.yearGridButtonSelected {
+  @apply bg-indigo-600 text-white font-semibold shadow-sm;
+}
+
+.clearYearPickerButton {
+  @apply mt-3 w-full text-center text-sm text-gray-600 hover:text-indigo-600 cursor-pointer;
+}
+
+.vhsListUl {
+  @apply -my-4 divide-y divide-gray-200;
+}
+
+.vhsListItem {
+  @apply relative py-4 px-2 -mx-2 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out flex justify-between items-center;
+}
+
+.vhsDetailsTitle {
+  @apply text-gray-900 font-medium group-hover:text-indigo-600 transition duration-150 ease-in-out;
+}
+
+.vhsDetailsYear {
+  @apply text-gray-500 text-sm ml-2;
+}
+
+.vhsDetailsGenre {
+  @apply text-gray-600 text-sm mt-1;
+}
+
+.actionContainer {
+  @apply ml-4 flex-shrink-0 relative flex items-center space-x-2;
+}
+
+.rentButton {
+  @apply inline-flex items-center px-3 py-1 border border-transparent text-xs font-medium rounded-md shadow-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer;
+  min-width: 50px;
+  justify-content: center;
+}
+.rentButtonRented {
+  @apply bg-gray-400 cursor-not-allowed;
+}
+.rentButtonNoUser {
+  @apply bg-gray-300 cursor-not-allowed;
+}
+.rentButtonLoading {
+  @apply bg-gray-400 cursor-wait;
+}
+.rentButtonAvailable {
+  @apply bg-green-600 hover:bg-green-700 focus:ring-green-500;
+}
+
+.deleteButton {
+  @apply inline-flex items-center justify-center w-6 h-6 p-0 text-xs font-bold rounded-full text-red-600 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-150 ease-in-out cursor-pointer;
+}
+.deleteButtonLoading {
+  @apply cursor-wait;
+}
+
+.spinnerIcon {
+  @apply animate-spin -ml-0.5 mr-2 h-4 w-4 text-white;
+}
+
+.rentError {
+  @apply absolute left-1/2 transform -translate-x-1/2 top-full mt-1 text-xs text-red-600 w-max max-w-[150px] text-center bg-white p-1 rounded shadow z-10;
+}

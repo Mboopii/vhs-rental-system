@@ -1,0 +1,24 @@
+version: '3.8' # Verzija Docker Compose sintakse
+
+services:
+  # Definicija za Backend servis (Spring Boot)
+  backend:
+    build:
+      context: ./backend # Putanja do backend foldera gdje je Dockerfile
+      dockerfile: Dockerfile       # Ime Dockerfile-a za backend
+    container_name: vhs-backend
+    ports:
+      - "8080:8080" # Mapiraj port 8080 kontejnera na port 8080 hosta
+    restart: always
+
+  # Definicija za Frontend servis (React + Nginx)
+  frontend:
+    build:
+      context: ./frontend   # Putanja do frontend foldera
+      dockerfile: Dockerfile # Koristit ćemo novi Dockerfile za frontend
+    container_name: vhs-frontend
+    ports:
+      - "5173:80" # Mapiraj port 80 (Nginx) kontejnera na port 5173 hosta
+    restart: always
+    depends_on:
+      - backend # Frontend će čekati da se backend pokrene (ne nužno da je potpuno spreman)

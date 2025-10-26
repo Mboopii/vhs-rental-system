@@ -1,0 +1,13 @@
+@reference "../index.css";
+
+.selectorBar {
+  @apply sticky top-0 z-50 bg-white shadow-sm p-4 border-b border-gray-200 mb-6;
+}
+
+.label {
+  @apply font-medium text-gray-700 mr-3;
+}
+
+.dropdown {
+  @apply p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 min-w-[200px] cursor-pointer;
+}

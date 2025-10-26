@@ -1,0 +1,58 @@
+@reference "../index.css";
+
+.loadingText,
+.errorText {
+  @apply text-center py-4;
+}
+.loadingText {
+  @apply text-gray-500 italic;
+}
+.errorText {
+  @apply text-red-600 font-medium;
+}
+.title {
+  @apply text-xl font-semibold text-gray-800 mb-4;
+}
+.emptyListText {
+  @apply text-gray-500;
+}
+.userList {
+  @apply divide-y divide-gray-200;
+}
+.userListItem {
+  @apply py-3 flex justify-between items-center;
+}
+.userInfo {
+  @apply flex-grow;
+}
+.userId {
+  @apply text-gray-500 text-xs mr-2;
+}
+.userName {
+  @apply text-gray-900 font-semibold;
+}
+.userEmail {
+  @apply text-gray-600 ml-2;
+}
+
+.actionWrapper {
+  @apply relative flex-shrink-0 ml-4 flex items-center space-x-2; /* Dodan flex i space-x-2 */
+}
+
+.editButton {
+  @apply inline-flex items-center justify-center w-6 h-6 p-0 text-xs font-bold rounded-full text-blue-600 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-150 ease-in-out cursor-pointer;
+}
+
+.deleteButton {
+  @apply inline-flex items-center justify-center w-6 h-6 p-0 text-xs font-bold rounded-full text-red-600 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed transition duration-150 ease-in-out cursor-pointer;
+}
+.deleteButtonLoading {
+  @apply cursor-wait;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: auto;
+}
+
+.inlineError {
+  @apply absolute right-0 top-full mt-1 text-xs text-red-600 w-48 text-right bg-white p-1 rounded shadow z-10;
+}
